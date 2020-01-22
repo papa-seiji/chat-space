@@ -1,10 +1,6 @@
-
-
 .chat-side{
   height: 100vh;
   float: left;
-  
-  
   
   .chat-side-header{
     background-color: #253141;
@@ -20,23 +16,15 @@
       color: white;
       display: flex;
       justify-content: space-between;
-
-      
       
       ul{
         display: flex;
         justify-content: space-between;
         
-        
-        
         a{
-          
-          
-            color: white;
-            text-align: right;
-            margin-left: 5px;
-          
-          
+          color: white;
+          text-align: right;
+          margin-left: 5px;
         }
       }
     }
@@ -52,14 +40,11 @@
       padding: 0 20 0 20px;
       display: inline;
       
-  
       &__name{
         color: #fff;
         font-size: 15px;
         font-weight: bold;
         margin: 0 0 5px;
-        
-        
       }
         
       &__messages{
@@ -68,11 +53,8 @@
         height: 17px;
         font-size: 11px;
         text-align: left;
-        
-        
       }
     }
-
   }
 }
 
