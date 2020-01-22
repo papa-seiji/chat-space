@@ -1,0 +1,18 @@
+-# <サイドバー>
+%wrapper
+  .chat-side
+    .chat-side-header
+      .chat-side-header__box
+        %p.chat-side-header__box__user aaa
+        %ul.chat-side-header__box__icon
+          %li.chat-side-header__box__icon__new-group
+          = link_to "#" do
+            =icon('fas','edit',class:'chat-side-header__box__icon__new-group1')
+          %li.chat-side-header__box__icon__new-group
+          = link_to "#" do
+            = icon('fas','cog',class:'chat-side-header__box__icon__new-group2')
+      
+    .group
+      %p.chat-side-group
+        %p.chat-side-group__name  chat_space 
+        %p.chat-side-group__messages  こんばんは
