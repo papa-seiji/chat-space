@@ -3,16 +3,24 @@
   .chat-side
     .chat-side-header
       .chat-side-header__box
-        %p.chat-side-header__box__user aaa
-        = current_user.name
+        %p.chat-side-header__box__user 
+          = current_user.name
         %ul.chat-side-header__box__icon
           %li.chat-side-header__box__icon__new-group
-          = link_to "#" do
-            =icon('fas','edit',class:'chat-side-header__box__icon__new-group1')
-          %li.chat-side-header__box__icon__new-group
-          = link_to edit_user_path(current_user) do
-            = icon('fas', 'cog', class: 'icon')
-    .group
-      %p.chat-side-group
-        %p.chat-side-group__name  chat_space 
-        %p.chat-side-group__messages  こんばんは
+          = link_to new_group_path do
+            =icon('fas','edit', class: 'chat-side-header__box__icon__new-group1')
+          %li.chat-side-header__box__icon__new-group1
+            = link_to edit_user_path(current_user) do
+              = icon('fas', 'cog', class: 'icon')
+    -# .group
+    -#   %p.chat-side-group
+    -#     %p.chat-side-group__name  chat_space 
+    -#     %p.chat-side-group__messages  こんばんは
+    .side-bar__groups-list
+      - current_user.groups.each do |group|
+        .group
+          = link_to new_group_path do
+            .group__name
+              = group.name
+            .group__message
+              メッセージはまだありません。
