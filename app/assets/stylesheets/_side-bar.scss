@@ -2,7 +2,7 @@
   height: 100vh;
   float: left;
   
-  .chat-side-header{
+  .header{
     background-color: #253141;
     width: 300px;
     height: 100px;
@@ -10,18 +10,18 @@
     align-items: center;
     padding: 0 20px;
 
-    &__box{
+    &__name{
       height: 20px;
       width: 100%;
       color: white;
       display: flex;
       justify-content: space-between;
       
-      ul{
+      &__lists{
         display: flex;
         justify-content: space-between;
         
-        a{
+        .list{
           color: white;
           text-align: right;
           margin-left: 5px;
@@ -29,12 +29,12 @@
       }
     }
   }
-  
-  .group{
+}
+  .groups{
     height: calc(100vh - 100px);
     padding: 20px;
-    
-    .chat-side-group{
+  }
+    .group{
       color: #fff;
       margin:0 auto;
       padding: 0 20 0 20px;
@@ -47,12 +47,51 @@
         margin: 0 0 5px;
       }
         
-      &__messages{
+      &__message{
         color: #fff ;
         width: 260px;
         height: 17px;
         font-size: 11px;
         text-align: left;
+      }
+    }
+  
+
+
+
+
+.chat-side{
+  height: 100vh;
+  float: left;
+  .chat-side-header{
+    background-color: #253141;
+    width: 300px;
+    height: 100px;
+    display:flex;
+    align-items: center;
+    padding: 0 20px;
+    &__box{
+      height: 20px;
+      width: 100%;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      &__user{
+
+      }
+      &__icon{
+      display: flex;
+      justify-content: space-between;
+        &__new-group{
+          color: white;
+          text-align: right;
+          margin-left: 5px;
+        }
+        &__new-group1{
+          color: white;
+          text-align: right;
+          margin-left: 5px;
+        }
       }
     }
   }
