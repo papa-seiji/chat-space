@@ -2,38 +2,22 @@
 .chat-main
   .chat-main__main-header
     .chat-main__main-header__left
-      %h2.chat-main__main-header__left-box__into-group
-        chat_space
+      %h2.chat-main__main-header__left__into-group
+        = @group.name
       %ul.chat-main__main-header__left-box
         %li.chat-main__main-header__left-box__into__meber
           Member:
-        %li.chat-main__main-header__left-box__into__meber-meber aaa
-    =link_to 'Edit', '#'
-    
+        %li.chat-main__main-header__left-box__into__meber-meber 
+          - @group.users.each do |user|
+            %li= user.name
+    = link_to "Edit", edit_group_path(@group.id)
   .messages
-    .message{"data-message_id" => "24873"}
-      .message__upper-info
-        %p.message__upper-info__talker masa
-        %p.message__upper-info__date 2020/01/22(wed) 13:43:03
-      %p.message__text こんにちは。
-
-    .message{"data-message_id" => "24873"}
-      .message__upper-info
-        %p.message__upper-info__talker masa
-        %p.message__upper-info__date 2020/01/23(thu) 21:43:03
-      %p.message__text こんばんは。
-
-    .message{"data-message_id" => "24873"}
-      .message__upper-info
-        %p.message__upper-info__talker masa
-        %p.message__upper-info__date 2020/01/24(fri) 09:43:03
-      %p.message__text おは~~。
-
+    = render @messages
   .form
-    %form.new-message
-      .input-box
-        %input.input-text{:placeholder => "type a message", :type => "text"}/
-        %label{class:"input-box__image"}
-          =icon('fas','image',class:"chat-main-icon fa-2x")
-          %input{type:"file", class:"input-box__image__file"}
-      %input.submit-btn{:name => "commit", :type => "submit", :value => "Send"}/
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
