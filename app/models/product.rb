@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   mount_uploader :image, ImageUploader
 
-   # ------------------------------------------------------------------
+  # ------------------------------------------------------------------
   # Validations
   # ------------------------------------------------------------------
   validate def check_image_dimensions

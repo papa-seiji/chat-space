@@ -4,15 +4,18 @@
     .chat-main__main-header__left
       %h2.chat-main__main-header__left__into-group
         = @group.name
+        -# = current_user.groups.name
       %ul.chat-main__main-header__left-box
         %li.chat-main__main-header__left-box__into__meber
           Member:
         %li.chat-main__main-header__left-box__into__meber-meber 
-          - @group.users.each do |user|
-            %li= user.name
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
     = link_to "Edit", edit_group_path(@group.id)
+
   .messages
     = render @messages
+    
   .form
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
@@ -20,4 +23,4 @@
         = f.label :image, class: 'form__mask__image' do
           = icon('fas', 'image', class: 'icon')
           = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'form__submit'
+        = f.submit 'Send', class: 'form__submit'
