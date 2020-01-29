@@ -79,7 +79,7 @@ $(function(){
         $(".form__submit").prop("disabled", false);
       })
       .fail(function() {
-        console.log('error');
+        alert('error');
     });
   };
   
