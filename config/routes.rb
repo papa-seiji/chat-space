@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   #こいつ怪しい⇩
   # resources :group_messages, only: [:new, :create]
-
+  
+  # :indexを追記
+  resources :users, only: [:index, :edit, :update]
   resources :users, only: [:edit, :update]
   resources :groups, only: [:index, :new, :create, :edit, :update] do
     resources :messages
