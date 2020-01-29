@@ -5,6 +5,7 @@
   float: left;
   
   
+  
   &__main-header{
     background-color: #ffffff;
     padding: 0 40px;
@@ -35,6 +36,7 @@
         font-size: 20px;
         color:#333;
         margin-bottom: 15px;
+        
       }
       &-box{
         height: 40px;
@@ -51,7 +53,6 @@
             font-size: 1px;
             color: #999;
             height: 12px;
-            
           }
         }
       }
@@ -87,6 +88,7 @@
         &__date{
           color: #999;
           margin-left:10px;
+          width: 100%;
         }
       }
       
