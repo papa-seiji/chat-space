@@ -65,12 +65,13 @@
     background-color: #fafafa;
     overflow: scroll;
     // margin: auto;
-
+    
     .message{
       width: 600px;
       // height: 100px;
       font-size: 12px;
       padding: 0 0 40px;
+      display: block;
       
       .upper-message{
         height: 18px;
@@ -96,6 +97,7 @@
         color: #434a54;
         font-size: 16px;
         margin-bottom: 10px;
+
       }
     }
   }
