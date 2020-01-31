@@ -27,5 +27,4 @@ class Product < ApplicationRecord
       { width: img.columns, height: img.rows }
     end
   end
-end
-end
+  
