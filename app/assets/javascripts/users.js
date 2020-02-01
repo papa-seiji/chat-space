@@ -31,6 +31,7 @@ $(function() {
   }
   $("#user-search-field").on("keyup", function() {
     let input = $("#user-search-field").val();
+    newFunction_1(input);
     $.ajax({
       type: "GET",
       url: "/users",
@@ -70,3 +71,11 @@ $(function() {
       .remove();
   });
 });
+
+function newFunction_1(input) {
+  newFunction(input);
+}
+
+function newFunction(input) {
+  console.log(input);
+}
