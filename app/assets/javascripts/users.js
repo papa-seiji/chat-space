@@ -1,4 +1,5 @@
 $(function() {
+  console.log(111)
   function addUser(user) {
     let html = `
       <div class="chat-group-user clearfix">
@@ -31,6 +32,7 @@ $(function() {
   }
   $("#user-search-field").on("keyup", function() {
     let input = $("#user-search-field").val();
+    console.log(input);
     newFunction_1(input);
     $.ajax({
       type: "GET",
@@ -69,13 +71,13 @@ $(function() {
     $(this)
       .parent()
       .remove();
+    });
   });
-});
-
-function newFunction_1(input) {
-  newFunction(input);
-}
-
-function newFunction(input) {
-  console.log(input);
-}
+  
+  function newFunction_1(input) {
+    newFunction(input);
+  }
+  
+  function newFunction(input) {
+    console.log(input);
+  }
