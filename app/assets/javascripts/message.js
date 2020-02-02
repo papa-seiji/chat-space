@@ -55,9 +55,9 @@ $(function(){
     };
     return html;
   };
-
   $('#new_message').on('submit', function(e){
     e.preventDefault();
+    var formData = new FormData(this);
     var url = $(this).attr('action')
     $.ajax({
       url: url,
@@ -67,17 +67,19 @@ $(function(){
       processData: false,
       contentType: false
     })
-     .done(function(data){
-       var html = buildHTML(data);
-       $('.messages').append(html);
-       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');   
-       $('form')[0].reset();
+
+
+
+    .done(function(data){
+      var html = buildHTML(data);
+      $('.messages').append(html);
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');   
+      $('form')[0].reset();
      })
       .fail(function(){
         alert('error');
       });
-      return false;
-    });
+    })
 
   var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
@@ -101,14 +103,14 @@ $(function(){
         });
         //メッセージが入ったHTMLに、入れ物ごと追加
         $('.messages').append(insertHTML);
-        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight})
       }
-    })
+      })
     .fail(function() {
-      alert.log('error');
-    });
-  };
-
+        alert('error');
+    })
+  }
+  
   //$(function(){});の閉じタグの直上(処理の最後)に以下のように追記
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
   setInterval(reloadMessages, 7000);
