@@ -68,20 +68,15 @@ $(function(){
       contentType: false
     })
 
-
-
-
-
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');   
       $('form')[0].reset();
-
       $('.form__submit').prop('disabled', false);
     })
 
-     })
+    })
 
       .fail(function(){
         alert('error');
@@ -110,22 +105,16 @@ $(function(){
         });
         //メッセージが入ったHTMLに、入れ物ごと追加
         $('.messages').append(insertHTML);
-
         $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
         
-
-        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight})
-
+        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       }
       })
     .fail(function() {
         alert('error');
     })
   }
-  
   //$(function(){});の閉じタグの直上(処理の最後)に以下のように追記
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
   setInterval(reloadMessages, 7000);
   };
-
-});
