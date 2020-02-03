@@ -39,11 +39,14 @@
         width: 140px;
         text-align: left;
         line-height: 33px;
+        
       }
       &-box{
         height: 40px;
         width: 120px;
         display: flex;
+        line-height: 15px;
+        
         
         
         &__into-meber{
@@ -52,11 +55,11 @@
           color: color1;
           font-size: 12px;
           
-          &__into-meber-meber{
-            font-size: 1px;
-            color: #999;
-            height: 12px;
-          }
+        &__into-meber-meber{
+          font-size: 1px;
+          color: #999;
+          height: 10px;
+        }
         }
       }
     }
