@@ -113,6 +113,6 @@ $(function(){
   }
   //$(function(){});の閉じタグの直上(処理の最後)に以下のように追記
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-  setInterval(reloadMessages, 7000);
-  };
+    setInterval(reloadMessages, 7000);
+  }
 });
