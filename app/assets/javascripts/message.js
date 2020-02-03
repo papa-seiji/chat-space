@@ -78,10 +78,7 @@ $(function(){
 
     })
 
-      .fail(function(){
-        alert('error');
-      });
-    })
+      
 
   var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
@@ -107,7 +104,7 @@ $(function(){
         $('.messages').append(insertHTML);
         $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
         
-        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+        
       }
       })
     .fail(function() {
@@ -118,3 +115,4 @@ $(function(){
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
   setInterval(reloadMessages, 7000);
   };
+});
