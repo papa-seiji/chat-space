@@ -30,13 +30,15 @@
     &__left{
       height: 64px;
       width: 79.3px;
-      margin-top:35px;
+      margin-top:25px;
       
       
       &__into-group{
         font-size: 20px;
         color:#333;
         width: 140px;
+        text-align: left;
+        line-height: 33px;
       }
       &-box{
         height: 40px;

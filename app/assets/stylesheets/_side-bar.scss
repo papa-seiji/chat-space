@@ -2,7 +2,7 @@
   height: 100vh;
   float: left;
   
-  .header{
+  .chat-side-header{
     background-color: #253141;
     width: 300px;
     height: 100px;
@@ -10,24 +10,31 @@
     align-items: center;
     padding: 0 20px;
 
-    &__name{
+    .chat-side-header__box{
+      
       height: 20px;
       width: 100%;
       color: white;
       display: flex;
       justify-content: space-between;
-      
-      &__lists{
-        display: flex;
-        justify-content: space-between;
-        
-        .list{
-          color: white;
-          text-align: right;
-          margin-left: 5px;
+      font-weight: bold;
+    }
+    .header__lists{
+      display: flex;
+      // justify-content: space-between;
+      text-align: center;
+      .list_1_edit{
+        color: white;
+        text-align: right;
+        margin-left: 5px;
+      }
+      .list_2_cog{
+        color: white;
+        text-align: right;
+        margin-left: 5px;
         }
       }
-    }
+    
   }
 }
   .groups{
