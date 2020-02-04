@@ -75,7 +75,10 @@ $(function(){
       $('form')[0].reset();
       $('.form__submit').prop('disabled', false);
     })
-
+    .fail(function() {
+      alert('error');
+      $('.form__submit').prop('disabled', false);
+  })
     })
 
       
